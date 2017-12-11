@@ -1,0 +1,30 @@
+{
+  "name": "barnebys/analytics-php",
+  "description": "Barnebys Analytics - making tracking, leads and impression tracking simple.",
+  "type": "library",
+  "keywords": [
+    "barnebys",
+    "auctions",
+    "analytics"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Johan Johansson",
+      "email": "johan.johansson@barnebys.com"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^5.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Barnebys\\Analytics\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Barnebys\\Tests\\": "tests/src"
+    }
+  }
+}

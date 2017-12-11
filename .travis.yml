@@ -1,0 +1,25 @@
+language: php
+php:
+  - '5.6'
+  - '7.0'
+  - '7.1'
+
+install:
+  - composer install --no-dev
+  - composer require satooshi/php-coveralls:~0.6@stable
+
+before_script:
+  - mkdir -p build/logs
+
+script:
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_success:
+  - sh -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then php vendor/bin/coveralls -v; fi;'
+
+notifications:
+  slack:
+    rooms:
+      secure: o82QXCNvwkJdJA2vZmfZTGBkCOYtdKBdVAYs593gynBxDMAeYhziY1JTtQZLNxM29j9cxtq/Dupphy3uF4Pk7Shtqa6C+K8so9RpnNO4eScMmAyOqVL4fwlefnnDnZCSA6fuPZcdSvrStS+70UQw6IvZtS3ctYx/scUG2GmRPs0PTMIvmsvAIu38Du2fEmQdDtitiJ2iVQdR3cuwL/liaTZ1aB+9bhVh3mhWKYsQImPjG12OcGFPFyzw1eh8MFhRJomaDEwP4OwJAdSp5vmdPqJ/rI8iO3nGFDhci6rJoQVAR8naSY+vrFd8L6zl3NKLVWROeCWkQQlAKIVnJNFvDWoiRFY5axk7hMNqucUo+lhtmuTSbrY+0SNdAaS24p7Qua+VUUg8ylGzbbMgXztFFDLvfTvVpKM3BwMTgsX7GSi6rCpUDdVD0cuZl5UWZ/podwGcigRgKvykWaQ0pFMf/YPntI74N/WzlABT9vdCSzxEmWKywmjPpQLOc3D3KLOepBZqz1TjqS9uux61RqgaLX1CfARs+4233U4URkwwnL4A+JeKGrdtkPp+8+URg5dIR2ptl3W3iZ27O+z4vrZq6Qs9MYTUSbYpHVCq2w4JWJxB1Eswgd3r0iaWDIYvr1STZZ29zA+M1B9WfGQsvtZt30oVF1300Qw2j9E4nHPnewM=
+  on_success: change
+  on_failure: always
