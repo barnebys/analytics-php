@@ -16,17 +16,18 @@ final class Impression
      * Impression constructor.
      * @param UrlBuilder $urlBuilder
      * @param $programId
-     * @param array ...$dimensions
+     * @param null $dimension1
+     * @param null $dimension2
+     * @param null $dimension3
      */
-    public function __construct(UrlBuilder $urlBuilder, $programId, ...$dimensions)
+    public function __construct(UrlBuilder $urlBuilder, $programId, $dimension1 = null, $dimension2 = null, $dimension3 = null)
     {
 
         $urlBuilder->setProgramId($programId)
                     ->setKind('impression');
 
-        foreach (array_slice($dimensions, 0, 3) as $key => $value) {
-            $index = $key + 1;
-            $urlBuilder->{"setDimension$index"}($value);
+        for($i=1;$i<=3;$i++) {
+            $urlBuilder->{"setDimension$i"}(${"dimension$i"});
         }
 
         $this->url = $urlBuilder->createURL();
