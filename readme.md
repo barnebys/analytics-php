@@ -5,17 +5,58 @@
 
 # Barnebys Analytics
 
-This is an helper for PHP to build tracking URL for Barnebys Analytics  with ease.
+This is an helper for PHP to build tracking URL for [Barnebys Analytics](https://github.com/barnebys/barnebys-analytics) with ease.
 
 ## Track clicks
 
+```
+// Create the URL Builder with your tracking domain & secret
+$urlBuilder = new UrlBuilder('analytics.yourdomain.com', 'test');
+$urlBuilder
+    ->setProgramId(123)
+    ->setKind('click')
+    ->setURL('http://www.someurl.com/')
+    ->setDimension1('a')
+    ->setDimension2('b')
+    ->setDimension3('c');
+
+// Get the signed tracking URL
+$url = $urlBuilder->createURL();
+```
+
 ## Track leads
+
+```
+$urlBuilder = new UrlBuilder('analytics.barnebys.sh', 'test');
+$urlBuilder
+    ->setProgramId(123)
+    ...
+    ->isAffiliate();
+``` 
 
 ## Impressions
 
 Generate the URL from PHP and use a lazy loader that loads the tracking pixel 
 when visible in the browser window. If you do not have a compatible lazy loader we 
 recommend using this [lazy loader](https://github.com/verlok/lazyload) which is written in vanilla js. 
+
+
+For most compatibility - place the script below before your `</body>` tag.
+
+```
+<script type="text/javascript">
+    (function(w, d){
+        var b = d.getElementsByTagName('body')[0];
+        var s = d.createElement("script"); s.async = true;
+        var v = !("IntersectionObserver" in w) ? "8.5.2" : "10.3.5";
+        s.src = "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/" + v + "/lazyload.min.js";
+        w.lazyLoadOptions = {
+            threshold: 0
+        };
+        b.appendChild(s);
+    }(window, document));
+</script>
+```
 
 ### Generating impression URL
 
