@@ -1,11 +1,11 @@
 [![Latest Stable Version](https://poser.pugx.org/barnebys/analytics-php/v/stable)](https://packagist.org/packages/barnebys/analytics-php)
-[![Build Status](https://travis-ci.org/barnebys/barnebys-analytics-php.svg?branch=master)](https://travis-ci.org/barnebys/barnebys-analytics-php)
-[![Coverage Status](https://coveralls.io/repos/github/barnebys/barnebys-analytics-php/badge.svg?branch=master)](https://coveralls.io/github/barnebys/https://travis-ci.org/barnebys/barnebys-analytics-php?branch=master)
+[![Build Status](https://travis-ci.org/barnebys/analytics-php.svg?branch=master)](https://travis-ci.org/barnebys/analytics-php)
+[![Coverage Status](https://coveralls.io/repos/github/barnebys/analytics-php/badge.svg?branch=master)](https://coveralls.io/github/barnebys/https://travis-ci.org/barnebys/analytics-php?branch=master)
 
 
 # Barnebys Analytics
 
-This is an helper for PHP to build tracking URL for [Barnebys Analytics](https://github.com/barnebys/barnebys-analytics) with ease.
+This is an helper for PHP to build tracking URL for [Barnebys Analytics](https://github.com/barnebys/analytics) with ease.
 
 ## Track clicks
 
