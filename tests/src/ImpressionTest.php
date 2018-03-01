@@ -20,8 +20,8 @@ class ImpressionTest extends TestCase
     public function testImpressionURL()
     {
 
-        $url = new Impression($this->urlBuilder, '123', 'a', 'b', 'c');
-        $expected = 'https://analytics.barnebys.sh/?p=123&k=impression&d1=a&d2=b&d3=c&s=68e84e5130b4af788009729463101c8c';
+        $url = new Impression($this->urlBuilder, '123', 'a', 'b', 'c', 'd', 'e');
+        $expected = 'https://analytics.barnebys.sh/?p=123&k=impression&d1=a&d2=b&d3=c&d4=d&d5=e&s=c77633cd4932a98243a0edd86dc82d97';
 
         $this->assertEquals($expected, $url);
 

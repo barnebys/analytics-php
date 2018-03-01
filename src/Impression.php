@@ -19,14 +19,16 @@ final class Impression
      * @param null $dimension1
      * @param null $dimension2
      * @param null $dimension3
+     * @param null $dimension4
+     * @param null $dimension5
      */
-    public function __construct(UrlBuilder $urlBuilder, $programId, $dimension1 = null, $dimension2 = null, $dimension3 = null)
+    public function __construct(UrlBuilder $urlBuilder, $programId, $dimension1 = null, $dimension2 = null, $dimension3 = null, $dimension4 = null, $dimension5 = null)
     {
 
         $urlBuilder->setProgramId($programId)
                     ->setKind('impression');
 
-        for($i=1;$i<=3;$i++) {
+        for($i=1;$i<=5;$i++) {
             $urlBuilder->{"setDimension$i"}(${"dimension$i"});
         }
 
