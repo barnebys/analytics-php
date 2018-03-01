@@ -19,6 +19,8 @@ $urlBuilder
     ->setDimension1('a')
     ->setDimension2('b')
     ->setDimension3('c');
+    ->setDimension4('d');
+    ->setDimension3('e');
 
 // Get the signed tracking URL
 $url = $urlBuilder->createURL();

@@ -1,6 +1,6 @@
 {
   "name": "barnebys/analytics-php",
-  "description": "Barnebys Analytics - making tracking, leads and impression tracking simple.",
+  "description": "Barnebys Analytics - Simplified tracking",
   "type": "library",
   "keywords": [
     "barnebys",
@@ -11,7 +11,7 @@
   "authors": [
     {
       "name": "Johan Johansson",
-      "email": "johan.johansson@barnebys.com"
+      "email": "johan.dahl@barnebys.com"
     }
   ],
   "require-dev": {

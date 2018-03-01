@@ -72,6 +72,20 @@ final class UrlBuilder
         return $this;
     }
 
+    public function setDimension4($value)
+    {
+        $this->setDimension(4, $value);
+
+        return $this;
+    }
+
+    public function setDimension5($value)
+    {
+        $this->setDimension(5, $value);
+
+        return $this;
+    }
+
     public function createURL()
     {
         $query = new UrlHelper($this->params, $this->secret);
